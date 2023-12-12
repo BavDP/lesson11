@@ -13,12 +13,9 @@ import com.example.lesson11_player.models.Song
 import com.example.lesson11_player.models.SongState
 
 class PlayListFragment : Fragment() {
-    private lateinit  var _binding: FragmentPlayListBinding;
+    private lateinit  var _binding: FragmentPlayListBinding
     private val binding: FragmentPlayListBinding
-        get() = this._binding;
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
+        get() = this._binding
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -31,8 +28,8 @@ class PlayListFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        this._binding = FragmentPlayListBinding.inflate(inflater);
+    ): View {
+        this._binding = FragmentPlayListBinding.inflate(inflater)
         return binding.root
     }
 
@@ -42,13 +39,6 @@ class PlayListFragment : Fragment() {
             .replace(R.id.fragmentContainerView, ArtistFragment.newInstance(song))
             .addToBackStack("")
             .commit()
-    }
-
-    private fun playSong(song: Song) {
-        when(song.state) {
-            SongState.PLAY -> song.state = SongState.PAUSE
-            SongState.PAUSE -> song.state = SongState.PLAY
-        }
     }
 
     companion object {

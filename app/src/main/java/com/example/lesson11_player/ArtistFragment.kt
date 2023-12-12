@@ -10,13 +10,10 @@ import com.example.lesson11_player.models.Song
 
 class ArtistFragment : Fragment() {
 
-    private lateinit var _binding: FragmentArtistBinding;
+    private lateinit var _binding: FragmentArtistBinding
     private val binding: FragmentArtistBinding
         get() = _binding
     private lateinit var song: Song
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -26,7 +23,7 @@ class ArtistFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentArtistBinding.inflate(inflater)
         return binding.root
     }

@@ -17,11 +17,11 @@ data class Song(private var _id: Int = -1,
     val id: Int
         get() = _id
 
-    public fun like() {
+    fun like() {
         this._likes++
     }
 
-    public fun dislike() {
+    fun dislike() {
         this._dislikes++
     }
 
@@ -32,6 +32,5 @@ data class Song(private var _id: Int = -1,
         src.likes,
         src.dislikes,
         src.state
-    ) {
-    }
+    )
 }

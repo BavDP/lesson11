@@ -9,13 +9,13 @@ import com.example.lesson11_player.databinding.ActivityMainBinding
 import com.example.lesson11_player.models.SongState
 
 class MainActivity : AppCompatActivity() {
-    private lateinit var _binding: ActivityMainBinding;
+    private lateinit var _binding: ActivityMainBinding
     private val binding: ActivityMainBinding
-        get() = _binding;
+        get() = _binding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        this._binding = ActivityMainBinding.inflate(layoutInflater);
+        this._binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(this.binding.root)
         setSupportActionBar(this.binding.appToolbar.topAppBar)
         binding.bottomNavigateLayout.bottomNavigate.setOnItemSelectedListener { item ->

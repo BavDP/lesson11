@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.ImageButton
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.core.content.res.ResourcesCompat
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.lesson11_player.R
@@ -17,7 +18,7 @@ import com.example.lesson11_player.models.SongState
 
 class PlayListDiffUtilCallback(private val newPlaylist: List<Song>, private val oldPlayList: List<Song>): DiffUtil.Callback() {
     override fun getOldListSize(): Int {
-        return oldPlayList.size;
+        return oldPlayList.size
     }
 
     override fun getNewListSize(): Int {
@@ -41,7 +42,7 @@ class PlayListAdapter(private val songs: MutableList<Song>,
                       private val artistClickHandler: (song: Song) -> Unit): RecyclerView.Adapter<PlayListAdapter.PlayListViewHolder>() {
 
     class PlayListViewHolder(private val view: View, private val songs: List<Song>): RecyclerView.ViewHolder(view) {
-        public fun bind(song: Song, artistClickHandler: (Song) -> Unit, playSongClick: (List<Song>, Song)->Unit) {
+        fun bind(song: Song, artistClickHandler: (Song) -> Unit, playSongClick: (List<Song>, Song)->Unit) {
 
             val songListItem = view.findViewById<ConstraintLayout>(R.id.songItem)
             val artistNameTextView = view.findViewById<TextView>(R.id.artistNameTextView)
@@ -52,11 +53,11 @@ class PlayListAdapter(private val songs: MutableList<Song>,
             artistNameTextView.setOnClickListener { _ -> artistClickHandler(song) }
             when(song.state) {
                 SongState.PLAY -> {
-                    playBtn.setImageDrawable(view.resources.getDrawable(R.drawable.pause, null))
+                    playBtn.setImageDrawable(ResourcesCompat.getDrawable(view.resources, R.drawable.pause, null))
                     songListItem.setBackgroundColor(view.resources.getColor(androidx.appcompat.R.color.abc_color_highlight_material, null))
                 }
                 SongState.PAUSE -> {
-                    playBtn.setImageDrawable(view.resources.getDrawable(R.drawable.play_circle, null))
+                    playBtn.setImageDrawable(ResourcesCompat.getDrawable(view.resources, R.drawable.play_circle, null))
                     songListItem.setBackgroundColor(view.resources.getColor(R.color.white, null))
                 }
             }
@@ -81,12 +82,12 @@ class PlayListAdapter(private val songs: MutableList<Song>,
         }
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PlayListAdapter.PlayListViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PlayListViewHolder {
         val view: View = LayoutInflater.from(parent.context).inflate(R.layout.play_list_item, parent, false)
         return PlayListViewHolder(view, songs)
     }
 
-    override fun onBindViewHolder(holder: PlayListAdapter.PlayListViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: PlayListViewHolder, position: Int) {
         holder.bind(songs[position], artistClickHandler) { songs, _ ->
             setSongsList(
                 songs

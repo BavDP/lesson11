@@ -13,4 +13,5 @@
     <string name="settingsBnBtn">Settings</string>
     <string name="playlistBnBtn">Playlist</string>
     <string name="artistBnBtn">Artist</string>
+    <string name="play_or_pause_a_song_button">play or pause a song button</string>
 </resources>

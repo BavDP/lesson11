@@ -16,6 +16,7 @@
         android:layout_marginEnd="16dp"
         android:layout_marginTop="16dp"
         android:src="@drawable/play_circle"
+        android:contentDescription="@string/play_or_pause_a_song_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/artistNameTextView" />
 
@@ -28,6 +29,7 @@
         android:layout_marginEnd="16dp"
         android:layout_marginTop="16dp"
         android:paddingStart="15dp"
+        android:paddingEnd="15dp"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="Song Name"
         />
@@ -41,6 +43,7 @@
         android:layout_marginEnd="16dp"
         android:layout_marginTop="16dp"
         android:paddingStart="15dp"
+        android:paddingEnd="15dp"
         app:layout_constraintTop_toBottomOf="@id/songNameTextView"
         tools:text="Artist Name"
         />

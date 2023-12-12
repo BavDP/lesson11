@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/songItem"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="16dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageButton
+        android:id="@+id/playPauseBtn"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@color/cardview_dark_background"
+        app:tint="@color/white"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/play_circle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/artistNameTextView" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/songNameTextView"
+        style="@style/TextAppearance.Material3.HeadlineMedium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="16dp"
+        android:paddingStart="15dp"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Song Name"
+        />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/artistNameTextView"
+        style="@style/TextAppearance.Material3.TitleMedium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="16dp"
+        android:paddingStart="15dp"
+        app:layout_constraintTop_toBottomOf="@id/songNameTextView"
+        tools:text="Artist Name"
+        />
+
+    <Button
+        android:id="@+id/dislikeBtn"
+        style="@style/Widget.Material3.Button.ElevatedButton.Icon"
+        android:layout_width="50dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        app:icon="@drawable/thumb_down"
+        app:layout_constraintTop_toBottomOf="@id/artistNameTextView"
+        app:layout_constraintStart_toStartOf="parent"
+         />
+
+    <Button
+        android:id="@+id/likeBtn"
+        style="@style/Widget.Material3.Button.ElevatedButton.Icon"
+        android:layout_width="50dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        app:icon="@drawable/thumb_up"
+        app:layout_constraintTop_toBottomOf="@id/artistNameTextView"
+        app:layout_constraintStart_toEndOf="@id/dislikeBtn"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

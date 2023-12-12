@@ -1,0 +1,24 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/playlistBnBtn"
+        android:icon="@drawable/library_music"
+        android:title="@string/playlistBnBtn"
+        android:contentDescription="@string/homeTbBtnDesc" />
+
+    <item
+        android:id="@+id/artistBnBtn"
+        android:icon="@drawable/artist"
+        android:title="@string/artistBnBtn"
+        android:contentDescription="@string/settingsTbBtnDesc">
+    </item>
+
+    <item
+        android:id="@+id/settingsBnBtn"
+        android:icon="@drawable/settings"
+        android:title="@string/settingsBnBtn"
+        android:contentDescription="@string/settingsTbBtnDesc">
+    </item>
+
+</menu>
